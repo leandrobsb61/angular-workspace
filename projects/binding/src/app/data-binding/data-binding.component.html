@@ -1,0 +1,36 @@
+<section>
+    <article>
+        <h3>Interpolação</h3>
+        <div class="explain">
+            <p>
+                A interpolação é representada pelo uso de duplas chaves envolvendo uma variável definida no .ts, uma
+                função,
+                expressão boolean, expressão matemática, entre outos.
+            </p>
+            <p>
+                Portanto, realiza o one way data binding, que é somente o fluxo do ts para o HTML.
+            </p>
+        </div>
+        <p>String renderizada com interpolação: {{ url }}</p>
+        <p>Resultado de expressão matemática (1+1) renderizada com interpolação: {{ 1 + 1 }}</p>
+        <p>Retorno de uma função renderizada com interpolação: {{ func() }}</p>
+        <p>Retorno de uma expressão boolean renderizada com interpolação: {{ true && false }}</p>
+        <p>Imagem renderizada com interpolação:</p>
+        <img src="{{ urlImagem }}">
+    </article>
+    <article>
+        <h3>Property binding</h3>
+        <div class="explain">
+            <p>
+                É utilizada em atributos de tags HTML, envolvendo-os com colchetes, faz com que o valor do atributo seja
+                o valor de uma variável que está definida no ts.
+            </p>
+            <p>
+                Portanto, realiza o one way data binding, que é somente o fluxo do ts para o HTML.
+            </p>
+        </div>
+        <p>Imagem renderizada com property binding:</p>
+        <img [src]="urlImagem">
+        <img bind-src="urlImagem">
+    </article>
+</section>
