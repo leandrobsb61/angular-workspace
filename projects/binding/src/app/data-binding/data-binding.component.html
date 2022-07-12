@@ -33,4 +33,40 @@
         <img [src]="urlImagem">
         <img bind-src="urlImagem">
     </article>
+    <article>
+        <h3>Class e Style Binding</h3>
+        <div class="explain">
+            São uma forma de property binding, mas ao invés de variáveis do ts trabalhamos com css.
+        </div>
+        <div>
+            Selecione uma classe
+            <!-- criando uma variável local de template com # -->
+            <select #classeSelecionada (change)="0">
+                <option value="alert-success">Sucesso</option>
+                <option value="alert-info">Info</option>
+                <option value="alert-warning">Alerta</option>
+                <option value="alert-danger">Erro</option>
+            </select>
+            <br><br>
+            <div class="alert {{ classeSelecionada.value }}">
+                Texto colorido conforme o valor do combobox.
+            </div>
+            <div class="alert" [class.alert-success]="classeSelecionada.value === 'alert-success'" role="alert">
+                Sucesso
+            </div>
+            <div class="alert" [class.alert-info]="classeSelecionada.value === 'alert-info'" role="alert">
+                Info
+            </div>
+            <div class="alert" [class.alert-warning]="classeSelecionada.value === 'alert-warning'" role="alert">
+                Alerta
+            </div>
+            <div class="alert" [class.alert-danger]="classeSelecionada.value === 'alert-danger'" role="alert">
+                Erro
+            </div>
+            <div class="alert alert-danger" role="alert"
+                [style.display]="classeSelecionada.value === 'alert-danger' ? 'block' : 'none'">
+                Esse texto só aparece se erro for selecionado.
+            </div>
+        </div>
+    </article>
 </section>

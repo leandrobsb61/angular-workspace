@@ -30,6 +30,7 @@
               "projects/binding/src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.css",
               "projects/binding/src/styles.css"
             ],
             "scripts": []
