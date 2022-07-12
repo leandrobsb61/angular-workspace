@@ -93,8 +93,31 @@
                 O valor salvo é {{ valorSalvo }}
             </p>
             <br>
-            <span (mouseover)="onMouseOverOut()" (mouseout)="onMouseOverOut()"
-            [class.highlight]="isMouseOver">Passe o mouse sobre mim</span>
+            <span (mouseover)="onMouseOverOut()" (mouseout)="onMouseOverOut()" [class.highlight]="isMouseOver">Passe o
+                mouse sobre mim</span>
+        </div>
+    </article>
+    <article>
+        <h3>Two way data-binding</h3>
+        <div class="explain">
+            É a mistura entre o input property (ts para o html) e o event binding (html para o ts), pois e feito pela
+            diretiva [(ngModel)] que envolte os colchetes e parênteses. Dessa forma temos o two way data-binding que
+            consiste em permitir que o valor de uma variável possa ser alterada tanto no template quanto no ts.
+        </div>
+        <div>
+            <input type="text" bindon-ngModel="nome">
+            <input type="text" [(ngModel)]="nome">
+            <p>
+                você digitou: {{ nome }}
+            </p>
+            <button class="btn btn-primary" (click)="alterarNome()">Clique para alterar a variável no ts</button>
+        </div>
+        <div>
+            <p>
+                Meu nome é {{ pessoa.nome }} e tenho {{ pessoa.idade }} anos
+            </p>
+            <input type="text" [(ngModel)]="pessoa.nome">
+            <input type="text" [(ngModel)]="pessoa.idade">
         </div>
     </article>
 </section>
