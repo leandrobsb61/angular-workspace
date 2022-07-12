@@ -36,7 +36,9 @@
     <article>
         <h3>Class e Style Binding</h3>
         <div class="explain">
-            São uma forma de property binding, mas ao invés de variáveis do ts trabalhamos com css.
+            <p>
+                São uma forma de property binding, mas ao invés de variáveis do ts trabalhamos com css.
+            </p>
         </div>
         <div>
             Selecione uma classe
@@ -67,6 +69,32 @@
                 [style.display]="classeSelecionada.value === 'alert-danger' ? 'block' : 'none'">
                 Esse texto só aparece se erro for selecionado.
             </div>
+        </div>
+    </article>
+    <article>
+        <h3>Event binding</h3>
+        <div class="explain">
+            O event binding é feito envolvendo o nome de um evento entre parenteses em uma tag que se deseja escutar
+            esse evento, quando disparado será acionado alguma função definida no ts
+        </div>
+        <div>
+            <!-- forma antiga sem parênteses -->
+            <!-- <button class="btn btn-primary" on-click="botaoClicado()">Clique</button> -->
+
+            <button class="btn btn-primary" (click)="botaoClicado()">Clique</button>
+            <br><br>
+            <input type="text" (keyup)="onKeyup($event)" (keyup.enter)="salvarValor(campoInput.value)"
+                (blur)="salvarValor(campoInput.value)" #campoInput>
+            <!-- o #campoInput faz referência ao $event.target -->
+            <p>
+                O valor atual é {{ valorAtual }}
+            </p>
+            <p>
+                O valor salvo é {{ valorSalvo }}
+            </p>
+            <br>
+            <span (mouseover)="onMouseOverOut()" (mouseout)="onMouseOverOut()"
+            [class.highlight]="isMouseOver">Passe o mouse sobre mim</span>
         </div>
     </article>
 </section>
