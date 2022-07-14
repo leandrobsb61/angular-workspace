@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
   nomeDoCurso: string = 'Angular';
+
+  onMudouValor(event: any): void {
+    console.log(event);
+    
+  }
+
 }
